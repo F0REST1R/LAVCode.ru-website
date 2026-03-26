@@ -657,5 +657,5 @@ if (mobileMenuBtn && navLinks) {
     });
 }
 
-console.log("Сайт готов, основной фокус: Telegram боты + Max, база клиентов localStorage");
+console.log("Сайт готов, основной фокус");
 

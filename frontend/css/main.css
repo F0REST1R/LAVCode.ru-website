@@ -975,6 +975,8 @@ section {
     align-items: center;
     justify-content: center;
     animation: modalFadeIn 0.3s ease;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 @keyframes modalFadeIn {
@@ -987,7 +989,7 @@ section {
 }
 
 .modal-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -995,6 +997,7 @@ section {
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(12px);
     animation: overlayFadeIn 0.3s ease;
+    z-index: 1999;
 }
 
 @keyframes overlayFadeIn {
@@ -1010,10 +1013,11 @@ section {
 
 .modal-container {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     z-index: 2001;
     animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+    margin: 0 auto;
 }
 
 @keyframes modalSlideUp {
@@ -1035,6 +1039,7 @@ section {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(99, 102, 241, 0.2);
     position: relative;
+    width: 100%;
 }
 
 .modal-content-wrapper::before {
@@ -1045,9 +1050,10 @@ section {
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, var(--accent), #8b5cf6, #c084fc);
+    z-index: 1;
 }
 
-/* Левая часть модалки */
+/* Левая часть модалки (десктопная) */
 .modal-left {
     flex: 1;
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
@@ -1151,7 +1157,7 @@ section {
     font-size: 0.95rem;
 }
 
-/* Правая часть модалки */
+/* Правая часть модалки (десктопная) */
 .modal-right {
     flex: 1;
     padding: 48px 40px;
@@ -1174,119 +1180,7 @@ section {
     gap: 24px;
 }
 
-.form-group {
-    position: relative;
-}
-
-.input-icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.input-icon i {
-    position: absolute;
-    left: 16px;
-    color: var(--accent);
-    font-size: 1rem;
-    z-index: 1;
-    transition: all 0.3s ease;
-}
-
-.input-icon input,
-.input-icon textarea {
-    width: 100%;
-    padding: 14px 16px 14px 44px;
-    border-radius: 16px;
-    border: 2px solid var(--border);
-    background: var(--surface);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.input-icon textarea {
-    padding: 14px 16px 14px 44px;
-    resize: vertical;
-    font-family: inherit;
-}
-
-.input-icon input:focus,
-.input-icon textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-    transform: translateY(-2px);
-}
-
-.input-icon input:focus + i,
-.input-icon textarea:focus + i {
-    transform: scale(1.1);
-    color: var(--accent-hover);
-}
-
-.textarea-icon {
-    align-items: flex-start;
-}
-
-.textarea-icon i {
-    top: 16px;
-}
-
-/* Кнопка отправки */
-.modal-submit-btn {
-    background: linear-gradient(135deg, var(--accent), #8b5cf6);
-    border: none;
-    padding: 14px 28px;
-    border-radius: 50px;
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    overflow: hidden;
-    margin-top: 8px;
-}
-
-.modal-submit-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.modal-submit-btn:hover::before {
-    left: 100%;
-}
-
-.modal-submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-}
-
-.modal-submit-btn:active {
-    transform: translateY(0);
-}
-
-.modal-submit-btn i {
-    transition: transform 0.3s ease;
-}
-
-.modal-submit-btn:hover i {
-    transform: translateX(5px);
-}
-
-/* Кнопка закрытия */
+/* Кнопка закрытия (десктопная) */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -1330,56 +1224,261 @@ section {
     background: rgba(239, 68, 68, 0.1);
 }
 
-/* Адаптивность */
+/* ========== ДЕСКТОПНАЯ ВЕРСИЯ (ширина > 768px) ========== */
+@media (min-width: 769px) {
+    .modal-left {
+        display: flex;
+    }
+    
+    .modal-right {
+        display: block;
+    }
+}
+
+/* ========== МОБИЛЬНАЯ ВЕРСИЯ (ширина ≤ 768px) - КРАСИВЫЙ ДИЗАЙН ========== */
 @media (max-width: 768px) {
+    .modal {
+        padding: 0;
+        align-items: flex-end;
+    }
+    
+    .modal-overlay {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+    }
+    
     .modal-container {
-        max-width: 95%;
+        max-width: 100%;
+        margin: 0;
+        animation: modalSlideUpMobile 0.4s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+    
+    @keyframes modalSlideUpMobile {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .modal-content-wrapper {
         flex-direction: column;
+        border-radius: 32px 32px 0 0;
+        max-height: 85vh;
+        overflow-y: auto;
+        background: var(--bg-secondary);
+        position: relative;
     }
     
+    /* Скрываем левую часть на телефоне */
     .modal-left {
-        padding: 32px 24px;
-        text-align: center;
+        display: none;
     }
     
-    .modal-icon {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .modal-features {
-        align-items: center;
-    }
-    
-    .modal-feature {
-        width: 100%;
-        justify-content: center;
-    }
-    
+    /* Правая часть - стильный дизайн */
     .modal-right {
-        padding: 32px 24px;
+        padding: 32px 28px 40px;
+        width: 100%;
+        background: var(--bg-secondary);
+    }
+    
+    /* Декоративная полоска сверху (как у iOS) */
+    .modal-right::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 4px;
+        background: var(--border);
+        border-radius: 4px;
     }
     
     .modal-right h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 28px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--text-primary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.3px;
+    }
+    
+    /* Декоративный элемент под заголовком */
+    .modal-right h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), #c084fc);
+        margin: 12px auto 0;
+        border-radius: 3px;
+    }
+    
+    /* Стили формы */
+    .modal-form {
+        gap: 20px;
+        margin-top: 8px;
+    }
+    
+    /* Группа полей ввода */
+    .form-group {
+        position: relative;
+    }
+    
+    /* Стили полей ввода */
+    .input-icon input,
+    .input-icon textarea {
+        width: 100%;
+        padding: 16px 16px 16px 48px;
+        border-radius: 20px;
+        border: 1.5px solid var(--border);
+        background: var(--surface);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .input-icon textarea {
+        padding: 16px 16px 16px 48px;
+        resize: vertical;
+        min-height: 100px;
+    }
+    
+    .input-icon i {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .textarea-icon i {
+        top: 20px;
+        transform: none;
+    }
+    
+    .input-icon input:focus,
+    .input-icon textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+        transform: translateY(-1px);
+    }
+    
+    .input-icon input:focus + i,
+    .input-icon textarea:focus + i {
+        color: var(--accent-hover);
+        transform: scale(1.05);
+    }
+    
+    /* Кнопка отправки */
+    .modal-submit-btn {
+        background: linear-gradient(135deg, var(--accent), #8b5cf6);
+        border: none;
+        padding: 16px 24px;
+        border-radius: 60px;
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    }
+    
+    .modal-submit-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+    
+    .modal-submit-btn:hover::before {
+        left: 100%;
+    }
+    
+    .modal-submit-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .modal-submit-btn i {
+        transition: transform 0.3s ease;
+    }
+    
+    .modal-submit-btn:hover i {
+        transform: translateX(5px);
+    }
+    
+    /* Кнопка закрытия (мобильная) */
+    .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        backdrop-filter: blur(4px);
+    }
+    
+    .modal-close:hover {
+        background: var(--accent);
+        transform: rotate(90deg);
+        border-color: var(--accent);
+    }
+    
+    .modal-close i {
+        font-size: 1rem;
+    }
+    
+    /* Статус сообщения */
+    .form-status {
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 16px;
+        font-size: 0.85rem;
         text-align: center;
     }
     
-    .modal-close {
-        top: 12px;
-        right: 12px;
+    .form-status.success {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
     }
     
-    .input-icon input,
-    .input-icon textarea {
-        font-size: 0.9rem;
-        padding: 12px 16px 12px 40px;
+    .form-status.error {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
     }
 }
 
+/* ========== ПЛАНШЕТНАЯ ВЕРСИЯ (769px - 1024px) ========== */
 @media (min-width: 769px) and (max-width: 1024px) {
     .modal-left {
         padding: 40px 24px;
@@ -1391,6 +1490,10 @@ section {
     
     .modal-right {
         padding: 40px 32px;
+    }
+    
+    .modal-right h2 {
+        font-size: 1.6rem;
     }
 }
 
@@ -2469,52 +2572,64 @@ body.captcha-unlocked {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        gap: 8px;
+        flex-wrap: nowrap;
     }
     
-    /* Логотип по центру */
+    /* Логотип - увеличенный */
     .logo {
         order: 2;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        gap: 10px;
         white-space: nowrap;
-        font-size: 1.4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .logo i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        flex-shrink: 0;
     }
     
-    /* Кнопка темы и кнопка заявки слева от бургера */
+    .logo span {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        font-weight: 700;
+    }
+    
+    /* Кнопка темы и кнопка заявки слева */
     .nav-actions {
         order: 1;
         display: flex;
-        gap: 8px;
-        margin-right: auto;
+        gap: 10px;
+        flex-shrink: 0;
     }
     
     /* Бургер-меню справа */
     .mobile-menu-btn {
         order: 3;
         display: flex;
-        margin-left: auto;
-        width: 40px;
-        height: 40px;
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
     }
     
-    /* Уменьшаем кнопку темы */
+    /* Увеличиваем кнопку темы */
     .theme-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
     }
     
-    /* Уменьшаем кнопку заявки */
+    /* Увеличиваем кнопку заявки */
     .btn-glow {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        gap: 6px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        gap: 8px;
     }
     
     /* Скрываем текст кнопки на телефонах, оставляем иконку */
@@ -2523,14 +2638,14 @@ body.captcha-unlocked {
     }
     
     .btn-glow i {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: 0;
     }
     
     /* Выпадающее меню */
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 74px;
         left: -100%;
         width: 100%;
         background: var(--bg-secondary);
@@ -2567,5 +2682,54 @@ body.captcha-unlocked {
     .nav-links a:hover {
         background: var(--surface-hover);
         color: var(--accent);
+    }
+}
+
+/* Для очень маленьких экранов (до 450px) */
+@media (max-width: 450px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .logo i {
+        font-size: 1.6rem;
+    }
+    
+    .logo span {
+        font-size: 1.3rem;
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .btn-glow {
+        padding: 8px 14px;
+    }
+    
+    .btn-glow i {
+        font-size: 1rem;
+    }
+    
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Для экранов от 450px до 550px */
+@media (min-width: 451px) and (max-width: 550px) {
+    .logo {
+        font-size: 1.7rem;
+    }
+    
+    .logo i {
+        font-size: 1.9rem;
+    }
+    
+    .logo span {
+        font-size: 1.6rem;
     }
 }

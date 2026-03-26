@@ -1,0 +1,105 @@
+/* Cookie уведомление - компактный */
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border-radius: 50px;
+    padding: 12px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(var(--bg-primary-rgb), 0.95);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.cookie-consent.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(20px);
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cookie-icon {
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.cookie-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.cookie-text a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.cookie-text a:hover {
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.cookie-btn {
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    color: white;
+}
+
+.cookie-btn:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cookie-consent {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        transform: none;
+        border-radius: 16px;
+        padding: 12px 16px;
+    }
+    
+    .cookie-content {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .cookie-text {
+        flex: 1;
+        font-size: 0.8rem;
+    }
+}

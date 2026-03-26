@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DevBot Studio | Разработка ботов и сайтов</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS (анимация при скролле) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="frontend/css/main.css">
+    <link rel="stylesheet" href="frontend/css/cookie.css">
+</head>
+<body class="dark">
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-share-alt"></i>
+                    <span>LAVCode<span class="accent">.ru</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#benefits">Обо мне</a></li>
+                    <li><a href="#pricing-detailed">Цены</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#faq">Вопросы</a></li>
+                    <li><a href="#testimonials">Отзывы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-btn">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button id="openModalBtn" class="btn-glow">
+                        <i class="fas fa-comments"></i>
+                        <span>Оставить заявку</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Hero секция -->
+            <section id="hero">
+                <div class="hero">
+                    <div class="hero-content" data-aos="fade-right">
+                        <div class="hero-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Эксперт по разработке и автоматизации</span>
+                        </div>
+                        <h1>
+                            <span class="gradient-text">Разработка сайтов и ботов</span><br>
+                            <!-- <span class="hero-highlight">Telegram & Max</span> -->
+                        </h1>
+                        <p class="hero-desc">
+                            <strong>Боты и сайты, которые работают за вас</strong><br>
+                            VK • MAX • CRM • Искусственный интеллект<br><br>
+                            Создаю решения, которые приносят заявки 24/7, интегрируются с любой CRM<br>
+                            и экономят до 40 часов в неделю на рутине.<br>
+                        </p>
+                        <button id="heroCtaBtn" class="btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            <span>Бесплатная консультация</span>
+                        </button>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span>40+</span>
+                                <span>проектов</span>
+                            </div>
+                            <div class="stat">
+                                <span>98%</span>
+                                <span>довольных клиентов</span>
+                            </div>                          
+                        </div>
+
+                    </div>
+
+                    <div class="hero-image" data-aos="fade-left">
+                        <div class="floating-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Блок с преимуществами / УТП -->
+            <section id="benefits">
+                <h2 class="section-title">Почему выбирают меня</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card" data-aos="fade-up">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Запуск за 3-7 дней</h3>
+                        <p>Не ждите месяцами — получайте готового бота уже через неделю</p>
+                    </div>
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Чистый код</h3>
+                        <p>Легкая поддержка и масштабирование. Полный исходный код передаю</p>
+                    </div>
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Поддержка 24/7</h3>
+                        <p>Я на связи даже после сдачи проекта. Любые доработки — оперативно</p>
+                    </div>
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>+30% к продажам</h3>
+                        <p>Мои клиенты увеличивают выручку после внедрения ботов</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Блок с гарантиями -->
+            <section id="guarantees">
+                <div class="guarantees-wrapper" data-aos="zoom-in">
+                    <div class="guarantee-badge">
+                        <i class="fas fa-medal"></i>
+                        <span>100% гарантия</span>
+                    </div>
+                    <h3>Вы получаете работающего бота, вместе с кодом и техническую поддержку на определенный период</h3>
+                    <div class="guarantees-grid">
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Бесплатные правки в течение 2 недель</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Передача исходного кода</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Техническая поддержка после сдачи</span>
+                        </div>
+                    </div>
+                    <button class="btn-glow btn-large" id="guaranteeCta">Хочу такие же результаты →</button>
+                </div>
+            </section>
+
+            <!-- Блок с детальными ценами -->
+            <section id="pricing-detailed">
+                <h2 class="section-title">Выберите свой тариф</h2>
+                <div class="pricing-detailed-grid">
+                    <div class="pricing-detailed-card" data-aos="fade-right">
+                        <div class="pricing-badge">Для старта</div>
+                        <h3>Базовый</h3>
+                        <div class="price-detailed">от 15 000 ₽</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> VK/MAX бот с базовой логикой</li>
+                            <li><i class="fas fa-check"></i> Админ-панель для управления</li>
+                            <li><i class="fas fa-check"></i> База данных</li>
+                            <li><i class="fas fa-check"></i> 1 месяц поддержки</li>
+                            <li><i class="fas fa-check"></i> Обучение работе с ботом</li>
+                        </ul>
+                        <button class="pricing-cta" data-plan="Базовый">Заказать ➜</button>
+                    </div>
+                    <div class="pricing-detailed-card popular-detailed" data-aos="fade-up">
+                        <div class="popular-badge-detailed">🔥 Самый популярный</div>
+                        <h3>Бизнес</h3>
+                        <div class="price-detailed">от 40 000 ₽</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Всё из Базового +</li>
+                            <li><i class="fas fa-check"></i> Интеграция с CRM</li>
+                            <li><i class="fas fa-check"></i> Внедрение искусственного интеллекта</li>
+                            <li><i class="fas fa-check"></i> Онлайн-оплата в боте</li>
+                            <li><i class="fas fa-check"></i> Расширенная аналитика</li>
+                            <li><i class="fas fa-check"></i> 3 месяца техподдержки</li>
+                        </ul>
+                        <button class="pricing-cta" data-plan="Бизнес">Заказать ➜</button>
+                    </div>
+                    <div class="pricing-detailed-card" data-aos="fade-left">
+                        <div class="pricing-badge">Всё включено</div>
+                        <h3>VIP-Комплекс</h3>
+                        <div class="price-detailed">от 80 000 ₽</div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Всё из Бизнес +</li>
+                            <li><i class="fas fa-check"></i> Продающий сайт-лендинг</li>
+                            <li><i class="fas fa-check"></i> 6 месяцев техподдержки</li>
+                            <li><i class="fas fa-check"></i> SEO-оптимизация</li>
+                            <li><i class="fas fa-check"></i> Консультация по маркетингу</li>
+                        </ul>
+                        <button class="pricing-cta" data-plan="VIP-Комплекс">Заказать ➜</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA между секциями -->
+            <section id="cta-intermediate">
+                <div class="cta-intermediate-content" data-aos="fade-up">
+                    <h3>Готовы автоматизировать бизнес и увеличить продажи?</h3>
+                    <p>Получите бесплатную консультацию и детальный расчет вашего проекта</p>
+                    <button class="btn-glow btn-large" id="intermediateCta">Получить бесплатную консультацию</button>
+                </div>
+            </section>
+            <!-- Услуги -->
+            <section id="services">
+                <h2 class="section-title">Мои услуги</h2>
+                <div class="services-grid">
+                    <div class="service-card" data-aos="zoom-in">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Разработка ботов</h3>
+                        <p>Чат-боты, рассылки, платежи, админ-панели, интеграция с AI. Любая сложность.</p>
+                    </div>
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="service-icon"><i class="fas fa-comment-dots"></i></div>
+                        <h3>Перенос ботов в новый мессенджер MAX</h3>
+                        <p>Полностью переведу вашего бота из старого мессенджера в MAX.</p>
+                    </div>
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <h3>Сайты & Лендинги</h3>
+                        <p>Адаптивные, продающие сайты, интернет-магазины, админки.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Демо-чат: минималистичный диалог -->
+            <section id="demo-chat">
+                <h2 class="section-title">Как я работаю с клиентами</h2>
+                <p class="demo-subtitle" data-aos="fade-up">От проблемы — к решению</p>
+                
+                <div class="chat-demo-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="chat-demo-header">
+                        <div class="chat-demo-avatar">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <div class="chat-demo-info">
+                            <h4>LAVCode.ru</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-demo-messages" id="chatMessages">
+                        <!-- Сообщения будут добавляться динамически -->
+                    </div>
+                    
+                    <div class="chat-demo-controls">
+                        <button id="restartChatDemo" class="chat-demo-restart">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Показать снова</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Часто задаваемые вопросы (FAQ) -->
+            <section id="faq">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <div class="faq-grid">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Сколько времени занимает разработка бота?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Сроки разработки зависят от сложности проекта. Простой бот можно сделать за 3-5 дней, средний проект занимает 1-2 недели, а комплексные решения с интеграциями и админ-панелью - до 3-4 недель. Всегда предоставляю точные сроки после согласования ТЗ.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Предоставляете ли вы техническую поддержку?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да, все проекты сопровождаются гарантийной поддержкой в течение 1-3 месяцев (в зависимости от тарифа). После этого вы можете оформить абонентское обслуживание для дальнейшей поддержки и доработок бота.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Какие способы оплаты вы принимаете?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Работаю с юридическими лицами по безналичному расчету (с НДС и без). Для физических лиц принимаю переводы на карту, а также криптовалюту. Оплата делится на этапы: предоплата 50% и 50% после сдачи проекта.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Можно ли интегрировать бота с CRM или сайтом?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Конечно! Я специализируюсь на интеграциях ботов с любыми внешними системами: CRM (AmoCRM, Bitrix24), сайтами через API, платежными системами, Google Sheets, базами данных PostgreSQL и другими сервисами.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Что нужно для начала работы?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Достаточно заполнить форму заявки или связаться со мной любым удобным способом. Я проведу бесплатную консультацию, помогу сформировать техническое задание и предложу оптимальное решение под ваш бюджет и задачи.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Передаете ли вы исходный код?</h3>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да, после полной оплаты вы получаете весь исходный код проекта, документацию по настройке и администрированию. Вы будете полным владельцем бота и сможете самостоятельно его развивать.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Отзывы -->
+            <section id="testimonials">
+                <h2 class="section-title">Что говорят клиенты</h2>
+                <div class="testimonials-grid" id="testimonialsGrid">
+                    <!-- Отзывы будут добавлены динамически через JS -->
+                </div>
+            </section>
+
+            <!-- Контакты и заявка -->
+            <section id="contact">
+                <div class="contact-wrapper" data-aos="fade-up">
+                    <div class="contact-header">
+                        <h2 class="section-title">Свяжитесь со мной</h2>
+                        <p class="contact-subtitle">Готов обсудить ваш проект и предложить лучшее решение</p>
+                    </div>
+                    
+                    <div class="contact-container">
+                        <!-- Левая часть - контактная информация -->
+                        <div class="contact-info-block" data-aos="fade-right" data-aos-delay="100">
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>На связи 24/7</h3>
+                                <p>Отвечу на все вопросы в течение 15 минут</p>
+                                
+                                <div class="contact-details">
+                                    <div class="contact-detail-item">
+                                        <div class="detail-icon">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <span class="detail-label">Max</span>
+                                            <span class="detail-value">@devbot_master</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-detail-item">
+                                        <div class="detail-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <span class="detail-label">Email</span>
+                                            <span class="detail-value">lavcode@bk.ru</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-detail-item">
+                                        <div class="detail-icon">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <span class="detail-label">WhatsApp</span>
+                                            <span class="detail-value">+7 (906) 718-79-91</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-availability">
+                                    <i class="fas fa-circle"></i>
+                                    <span>Сейчас онлайн</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Правая часть - форма и CTA -->
+                        <div class="contact-form-block" data-aos="fade-left" data-aos-delay="200">
+                            <div class="form-card">
+                                <div class="form-badge">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Бесплатно</span>
+                                </div>
+                                <h3>Получите консультацию эксперта</h3>
+                                <p class="form-desc">Расскажите о своем проекте, и я предложу оптимальное решение</p>
+                                
+                                <form id="contactForm" class="contact-form" action="https://formsubmit.co/lavcode@bk.ru" method="POST">
+
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_next" value="https://ваш-сайт.com">
+                                    <input type="hidden" name="_subject" value="Консультация с сайта!">
+                                    <div class="form-row">
+                                        <div class="form-input-group">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" id="contactName" placeholder="Ваше имя" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-input-group">
+                                            <i class="fas fa-envelope"></i>
+                                            <input type="text" id="contactContact" placeholder="ТГ / MAX / WhatsApp / Email" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-input-group">
+                                            <i class="fas fa-comment"></i>
+                                            <textarea rows="3" id="contactMessage" placeholder="Опишите задачу или вопрос..."></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+                                        <span>Получить бесплатную консультацию</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                    
+                                    <div id="contactFormStatus" class="form-status"></div>
+                                </form>
+                                
+                                <div class="form-guarantee">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Никакого спама. Только полезная консультация</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-comments"></i>
+                        <span>LAVCode<span class="accent">.ru</span></span>
+                    </div>
+                    <p class="footer-desc">Создаем ботов и сайты, которые приносят реальные результаты</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#team">Команда</a></li>
+                            <li><a href="#projects">Проекты</a></li>
+                            <li><a href="#faq">Вопросы</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li><a href="https://t.me/devbot_master" target="_blank"><i class="fas fa-comments"></i> @devbot_master</a></li>
+                            <li><a href="mailto:lavcode@bk.ru"><i class="fas fa-envelope"></i> lavcode@bk.ru</a></li>
+                            <li><a href="https://wa.me/79991234567" target="_blank"><i class="fab fa-whatsapp"></i> +7 (906) 718-79-91</a></li>
+                        </ul>
+                    </div>            
+                    <!-- <div class="footer-column">
+                        <h4>Соцсети</h4>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LAVCode.ru. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модалка -->
+    <div id="orderModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-content-wrapper">
+                <button class="modal-close" id="closeModalBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="modal-left">
+                    <div class="modal-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Готовы автоматизировать бизнес?</h3>
+                    <p>Оставьте заявку, и я свяжусь с вами в течение 15 минут, чтобы обсудить детали вашего проекта</p>
+                    
+                    <div class="modal-features">
+                        <div class="modal-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Ответ за 15 минут</span>
+                        </div>
+                        <div class="modal-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Бесплатная консультация</span>
+                        </div>
+                        <div class="modal-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Гарантия качества</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-right">
+                    <h2>Оставить заявку</h2>
+                    <form id="orderForm" class="modal-form" action="https://formsubmit.co/lavcode@bk.ru" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://ваш-сайт.com">
+                        <input type="hidden" name="_subject" value="Новая заявка с сайта!">
+
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="clientName" placeholder="Ваше имя" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="text" id="clientContact" placeholder="ТГ / MAX / WhatsApp / Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon textarea-icon">
+                                <i class="fas fa-comment"></i>
+                                <textarea rows="4" id="clientMessage" placeholder="Опишите задачу..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="modal-submit-btn">
+                            <span>Отправить заявку</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Капча при загрузке сайта -->
+    <div id="siteCaptcha" class="site-captcha-overlay">
+        <div class="site-captcha-modal">
+            <div class="captcha-logo">
+                <i class="fas fa-share-alt"></i>
+                <span>LAVCode<span class="accent">.ru</span></span>
+            </div>
+            <h3>Подтверждение</h3>
+            <p>Пожалуйста, подтвердите, что вы не робот</p>
+            
+            <div class="site-captcha-container">
+                <div class="site-captcha-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Проверка безопасности</span>
+                </div>
+                <div class="site-captcha-slider-container">
+                    <div class="site-captcha-track" id="siteCaptchaTrack">
+                        <div class="site-captcha-thumb" id="siteCaptchaThumb">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="site-captcha-text" id="siteCaptchaText">
+                            <span>Потяните ползунок вправо</span>
+                        </div>
+                    </div>
+                    <div class="site-captcha-success" id="siteCaptchaSuccess" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Проверка пройдена</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="captcha-note">
+                <i class="fas fa-shield-alt"></i>
+                <span>Это необходимо для защиты от автоматических атак</span>
+            </div>
+        </div>
+    </div>
+    <!-- Cookie уведомление -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite cookie-icon"></i>
+            <div class="cookie-text">
+                <span>Мы используем cookies для улучшения работы сайта. <a href="#">Подробнее</a></span>
+            </div>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="cookie-btn accept">Хорошо</button>
+            </div>
+        </div>
+    </div>
+    <!-- скрипты -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="frontend/js/main.js"></script>
+</body>
+</html>

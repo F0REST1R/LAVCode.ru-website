@@ -2440,3 +2440,132 @@ body.captcha-unlocked {
         font-size: 1.5rem;
     }
 }
+
+/* Мобильная шапка */
+.mobile-menu-btn {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    
+    /* Логотип по центру */
+    .logo {
+        order: 2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 1.4rem;
+    }
+    
+    .logo i {
+        font-size: 1.5rem;
+    }
+    
+    /* Кнопка темы и кнопка заявки слева от бургера */
+    .nav-actions {
+        order: 1;
+        display: flex;
+        gap: 8px;
+        margin-right: auto;
+    }
+    
+    /* Бургер-меню справа */
+    .mobile-menu-btn {
+        order: 3;
+        display: flex;
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Уменьшаем кнопку темы */
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Уменьшаем кнопку заявки */
+    .btn-glow {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+    
+    /* Скрываем текст кнопки на телефонах, оставляем иконку */
+    .btn-glow span {
+        display: none;
+    }
+    
+    .btn-glow i {
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    /* Выпадающее меню */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: var(--bg-secondary);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+        z-index: 99;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .nav-links a::after {
+        display: none;
+    }
+    
+    .nav-links a:hover {
+        background: var(--surface-hover);
+        color: var(--accent);
+    }
+}
